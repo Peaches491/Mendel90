@@ -27,12 +27,14 @@ M2p5_clearance_radius= 2.8 / 2;   // M2.5
 M2p5_nut_trap_depth = 2.5;
 
 M3_tap_radius = 2.5 / 2;
+M3_insert_radius = 0.206 * 25.4 / 2;
 M3_clearance_radius = 3.3 / 2;
 M3_nut_radius = 6.5 / 2;
 M3_nut_trap_depth = 3;
 
 M4_tap_radius = 3.3 / 2;
 M4_clearance_radius = 2.2;
+M4_insert_radius = (0.234 + 0.208) * 25.4 / 4;
 M4_nut_radius = 8.2 / 2;
 M4_nut_trap_depth = 4;
 

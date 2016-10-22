@@ -190,7 +190,8 @@ Y_bar_length =  base_depth - 2 * base_clearance;
 
 Y_bar_length2 = Y_travel + limit_switch_offset + bearing_mount_length(Y_bearings) + 2 * bar_clamp_depth + axis_end_clearance + bar_clamp_switch_y_offset();
 
-Y_bar_spacing = Y_carriage_width - bearing_mount_width(Y_bearings);
+/*Y_bar_spacing = Y_carriage_width - bearing_mount_width(Y_bearings);*/
+Y_bar_spacing = (209+8) - bearing_mount_width(Y_bearings);
 Y_bearing_inset = bearing_mount_length(Y_bearings) / 2 + bar_clamp_depth + axis_end_clearance;
 
 Y_belt_motor_offset = 13 + belt_width(Y_belt) / 2;
@@ -279,7 +280,8 @@ module y_carriage() {
         for(x = [-bed_holes[0] / 2, bed_holes[0] / 2])
             for(y = [-bed_holes[1] / 2, bed_holes[1] / 2])
                 translate([x, y, 0])
-                    cylinder(r = 2.5/2, h = 100, center = true);
+                    /*cylinder(r = 2.5/2, h = 100, center = true);*/
+                    cylinder(r = 5.08/2, h = 100, center = true);
     }
 }
 
@@ -733,7 +735,7 @@ module frame_stay(left) {
             translate([x, controller_y, controller_z])
                 rotate([90, 0, 90])
                     controller_screw_positions(controller)
-                        cylinder(r = frame_nuts ? M3_clearance_radius : M3_tap_radius, h = 100, center = true);
+                        cylinder(r = frame_nuts ? M3_clearance_radius : M3_insert_radius, h = 100, center = true);
 
             translate([x, psu_y, psu_z])
                 if(atx_psu(psu))
@@ -947,7 +949,7 @@ module frame_all() projection(cut = true) {
     translate([ base_width / 2 + 2 + stay_depth + gantry_Y + sheet_thickness(frame), 0, right_stay_x]) rotate([0, 90, 90]) frame_stay(false);
 }
 
-module frame_base_dxf() projection(cut = true) translate([0,0, sheet_thickness(base) / 2]) frame_base();
+module frame_base_dxf() projection(cut = true) translate([0,0, sheet_thickness(base) / 2]) rotate([0, 0, 90]) frame_base();
 
 module frame_left_dxf() projection(cut = true) translate([0, -gantry_Y - sheet_thickness(frame), left_stay_x]) rotate([0, 90, 0]) frame_stay(true);
 

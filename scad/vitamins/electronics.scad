@@ -13,6 +13,7 @@ module sanguinololu() {
     import("../imported_stls/sanguinololu.stl");
 }
 
+Arduino =      ["Arduino MEGA",                       4   * 25.4, 2.10 * 25.4, 1.5 * 2.54, []];
 Sanguinololu = ["SANGUINOL: Sanguinolou electronics", 4   * 25.4,    2 * 25.4, 1.5 * 2.54, []];
 Melzi =        ["MELZI: Melzi electronics",           8.2 * 25.4, 1.95 * 25.4, 1.5 * 2.54, ["USBLEAD: USB A to Mini B lead",
                                                                                                  "SDCARD: Micro SD card",
@@ -27,12 +28,33 @@ function controller_accessories(type) = type[4];
 module controller_screw_positions(type) {
     inset = controller_hole_inset(type);
 
-    for($i = [0:3]) {
-        x = [inset, controller_width(type) - inset][$i % 2];
-        y = [inset, controller_length(type) - inset][$i / 2];
-        translate([x, y, 0])
-            children();
-   }
+    // https://www.safaribooksonline.com/library/view/arduino-a-technical/9781491934319/ch04.html
+    if(type == Arduino) {
+        x_near = 2.5;
+        x_far = 50.8;
+        y_near_1 = 13.97;
+        y_near_2 = 15.24;
+        y_far_1 = 90.17;
+        y_far_2 = 96.52;
+
+        rotate([0, 0, -90]) {
+          translate([x_near, y_near_2, 0])
+              children();
+          translate([x_far, y_near_1, 0])
+              children();
+          translate([x_near, y_far_1, 0])
+              children();
+          translate([x_far, y_far_2, 0])
+              children();
+        }
+    } else {
+        for($i = [0:3]) {
+            x = [inset, controller_width(type) - inset][$i % 2];
+            y = [inset, controller_length(type) - inset][$i / 2];
+            translate([x, y, 0])
+                children();
+        }
+    }
 }
 
 module controller(type) {
@@ -78,7 +100,7 @@ KY240W =
 // The screw layout specified here uses the inner set of screw-mounts on the PSU, which are M4.
 // The outer set don't appear to be M3, even though the datasheet claims they are.
 S_300_12 =
-    ["S30012", 215, 115, 50, M4_cap_screw, M4_clearance_radius, true,
+    ["S30012", 225, 115, 50, M4_cap_screw, M4_insert_radius, true,
         [
             [ 215 / 2 - 32.5,  115 / 2 - 82.5],
             [ 215 / 2 - 32.5,  115 / 2 - 32.5],

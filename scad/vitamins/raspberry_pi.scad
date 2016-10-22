@@ -19,6 +19,7 @@ module pi_holes()
 
 function raspberry_pi_width() = pi_width;
 function pi_on_psu() = atx_psu(psu);
+function pi_on_psu() = true;
 
 card_width = 30.3;
 card_thickness = 4;

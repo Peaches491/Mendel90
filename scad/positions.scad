@@ -84,7 +84,7 @@ psu_y = base_depth / 2 - base_clearance - psu_width(psu) / 2 - (atx_psu(psu) ? a
 
 psu_top = psu_z + psu_length(psu) / 2 + (atx_psu(psu) ? 0 : mains_inlet_depth());
 
-controller_z = (height + (psu_length(psu) ? psu_top : fixing_block_height() + pi_width)) / 2 - controller_length(controller) / 2;
+controller_z = 80 + ((height + (psu_length(psu) ? psu_top : fixing_block_height() + pi_width)) / 2 - controller_length(controller) / 2);
 
 controller_y = (base_depth / 2 + gantry_Y + sheet_thickness(frame)) / 2 - controller_width(controller) / 2;
 

@@ -73,7 +73,7 @@ fan_motor_wires_hole_radius = wire_hole_radius(fan_motor_wires);
 bed_wires_hole_radius = wire_hole_radius(bed_wires);
 thermistor_wires_hole_radius = wire_hole_radius(thermistor_wires);
 
-cnc_sheets = false;                 // If sheets are cut by CNC we can use slots, etc instead of just round holes
+cnc_sheets = true;                 // If sheets are cut by CNC we can use slots, etc instead of just round holes
 base_nuts = false;                  // Need something under the base if using nuts
 pulley_type = T5x8_plastic_pulley;
 clip_handles = true;
@@ -81,7 +81,7 @@ include_fan = false;
 squeeze = false;                    // Bodge to make Huxley as small as possible without affecting dibond kits
 part_fan = fan60x15;
 extruder = Wades;                   // Default extruder
-raspberry_pi = false;               // Raspberry pi mounted on PSU
+raspberry_pi = true;               // Raspberry pi mounted on PSU
 raspberry_pi_camera = false;        // RPI camera on bar across the back
 light_strip = false;
 vero_bed = false;                   // Bed made from vero board rather than custom PCB.
@@ -103,7 +103,7 @@ limit_switch_offset = 1;                // the over travel to reach the limit sw
 X_carriage_clearance = 2;               // how close the X carriage is to the XZ plane
                                         // how close the Y carriage is to the window in the XZ plane
 Y_carriage_clearance = 2 + (clip_handles ? (bulldog_handle_length(small_bulldog) - (Y_carriage_width - bed_width) / 2) : 0);
-Y_carriage_rad = 3;                     // corner radius
+Y_carriage_rad = 6;                     // corner radius
 Z_clearance = 10;                       // How close the top of the object gets to the gantry
 belt_clearance = 0.2;                   // clearance of belt clamp slots
 

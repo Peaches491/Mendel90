@@ -41,6 +41,8 @@ module tab() {
 }
 
 nut_offset = nutty ? -bearing_clamp_tab / 2 + nut_radius(nut) + 0.5 : 0;
+/*nut_offset = -bearing_clamp_tab / 2 + nut_radius(nut) + 0.5;*/
+/*nut_offset = 0;*/
 
 module bearing_mount(bearing, height) {
 
