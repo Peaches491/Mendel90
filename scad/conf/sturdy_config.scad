@@ -43,7 +43,7 @@ case_fan = fan80x38;
 psu = S_300_12;
 controller = Arduino;
 //controller = Sanguinololu;
-spool = spool_300x85;
+spool = spool_200x55;
 bottom_limit_switch = false;
 top_limit_switch = true;
 

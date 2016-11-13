@@ -59,8 +59,8 @@ include <colors.scad>
 include <utils.scad>
 include <vitamins.scad>
 
-endstop_wires    = [2, 1.4, "A"];   // 7 strands of 0.2
-motor_wires      = [4, 1.4, "B"];
+endstop_wires    = [2, 2.0, "A"];   // 7 strands of 0.2
+motor_wires      = [4, 1.8, "B"];
 bed_wires        = [2, 2.8, "C"];   // 13A mains cable
 fan_motor_wires  = [6, 1.4, "D"];   // fan and motor wires along top of gantry
 two_motor_wires  = [8, 1.4,,"E"];   // Y and Z motors

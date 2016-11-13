@@ -8,6 +8,7 @@
 
 spool_300x85 = [300, 85, 60, 4, 8, 52, 250, 280];
 spool_200x55 = [200, 55, 40, 5, 5, 52, 200, 200];
+spool_200x85 = [200, 85, 60, 4, 8, 52, 200, 200];
 
 function spool_diameter(type)      = type[0];
 function spool_width(type)         = type[1];

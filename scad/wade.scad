@@ -271,7 +271,7 @@ module wades_block_stl() {
 }
 
 
-spacer_length = 4 * 1.5;
+spacer_length = 3 * 1.5;
 gear_thickness = 6;
 
 module wades_gear_spacer_stl() {
