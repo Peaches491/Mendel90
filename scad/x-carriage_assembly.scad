@@ -116,4 +116,4 @@ if(0)
         else
             x_carriage_parts_stl();
 else
-    x_carriage_assembly(true, true);
+    x_carriage_assembly(false, true);

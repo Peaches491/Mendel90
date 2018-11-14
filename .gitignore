@@ -9,3 +9,9 @@ gcode
 *.g*
 dummy.csg
 Thumbs.db
+
+*.stl
+*.dxf
+*.pdf
+*.svg
+*.txt

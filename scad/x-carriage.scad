@@ -16,7 +16,7 @@ hole = extruder_hole(extruder);
 width = hole[1] + 2 * bearing_holder_width(X_bearings);
 
 extruder_width = extruder_width(extruder);
-function nozzle_x_offset() = extruder_x_offset(extruder);                // offset from centre of the extruder
+function nozzle_x_offset() = 0;                // offset from centre of the extruder
 
 
 length = extruder_length(extruder) + 1;
@@ -428,7 +428,8 @@ module x_carriage_fan_bracket_stl() {
     belt_z = local_z((x_carriage_offset() - pulley_inner_radius - belt_thickness(X_belt)) / 2);
 
     screw_z = local_z(front_nut_z);                             // convert to local z
-    h = fan_z - fan_depth(part_fan) / 2;;
+    h = fan_z - fan_depth(part_fan) / 2;
+    echo("DMDBG: h = ", h);
     pitch = fan_hole_pitch(part_fan);
     boss_r = washer_diameter(fan_washer) / 2 + 1;
     w = front_nut_pitch * 2 + washer_diameter(M3_washer) + t * 2;
@@ -487,7 +488,7 @@ module x_carriage_fan_bracket_stl() {
             //
             translate([side * front_nut_pitch, 0, max(screw_z - bodge, fan_bracket_thickness + washer_diameter(M3_washer) / 2) + h / 2])
                 rotate([90, 0, 0])
-                    vertical_tearslot(h = 100, l = h, r = M3_clearance_radius, center = true);
+vertical_tearslot(h = 100, l = 1.8*h, r = M3_clearance_radius, center = true);
             //
             // fan screw holes
             //
