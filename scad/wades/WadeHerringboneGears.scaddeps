@@ -1,0 +1,4 @@
+stls/WadeHerringboneGears.stl: \
+	/home/daniel/GitHub/Mendel90/scad/wades/teardrop.scad \
+	/home/daniel/GitHub/Mendel90/scad/wades/involute_gears.scad \
+	WadeHerringboneGears.scad

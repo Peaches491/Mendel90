@@ -1,0 +1,5 @@
+stls/ult-gregs-wades-30mm-v1.stl: \
+	/home/daniel/GitHub/Mendel90/scad/wades/functions.scad \
+	/home/daniel/GitHub/Mendel90/scad/wades/metric.scad \
+	/home/daniel/GitHub/Mendel90/scad/wades/configuration.scad \
+	ult-gregs-wades-30mm-v1.scad
