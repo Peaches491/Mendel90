@@ -241,7 +241,7 @@ module x_belt_tensioner_stl()
     }
 }
 
-duct_wall = 1;   // Skeinforge always makes two walls, so if this is less than twice the filament width it ends about twice the filament width but more strongly bonded.
+duct_wall = 1.2;   // Skeinforge always makes two walls, so if this is less than twice the filament width it ends about twice the filament width but more strongly bonded.
 duct_bottom_thickness = 3 * layer_height;
 duct_top_thickness = 4 * layer_height;
 fan_nut_trap_thickness = 4;
@@ -274,7 +274,7 @@ throat_width = (or + skew) * 2;
 zip_x = min(length / 2 - lug_width - zipslot_width() / 2 - eta, bar_x);
 
 fan_x = base_offset;
-fan_y = -(width / 2 + fan_width(part_fan) / 2) - (2 * X_carriage_clearance + belt_width(X_belt) + belt_clearance);
+fan_y = -(width / 2 + fan_width(part_fan) / 2) - (2 * X_carriage_clearance + belt_width(X_belt) + belt_clearance) - 5;
 fan_z = nozzle_length(hot_end) + hot_end_duct_offset(hot_end)[2] - duct_height_fan - fan_depth(part_fan) / 2;
 
 fan_x_duct = fan_x - hot_end_duct_offset(hot_end)[0];
@@ -488,7 +488,7 @@ module x_carriage_fan_bracket_stl() {
             //
             translate([side * front_nut_pitch, 0, max(screw_z - bodge, fan_bracket_thickness + washer_diameter(M3_washer) / 2) + h / 2])
                 rotate([90, 0, 0])
-vertical_tearslot(h = 100, l = 1.8*h, r = M3_clearance_radius, center = true);
+                    vertical_tearslot(h = 100, l = 1.8*h, r = M3_clearance_radius, center = true);
             //
             // fan screw holes
             //
