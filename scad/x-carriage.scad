@@ -254,7 +254,8 @@ fan_screw_length = screw_longer_than(fan_depth(part_fan) + fan_bracket_thickness
 fan_width = max(2 * fan_hole_pitch(part_fan) + screw_boss_diameter(fan_screw), fan_bore(part_fan) + 2 * wall);
 fan_screw_boss_r = fan_width / 2 - fan_hole_pitch(part_fan);
 
-front_nut_pitch = min((bar_x - bearing_holder_length(X_bearings) / 2 - nut_radius(M3_nut) - 0.3), fan_hole_pitch(part_fan) - 5);
+front_nut_pitch = 14; //min((bar_x - bearing_holder_length(X_bearings) / 2 - nut_radius(M3_nut) - 0.3), fan_hole_pitch(part_fan) - 5);
+echo("DMDBG: front_nut_pitch: ", front_nut_pitch);
 front_nut_width = 2 * nut_radius(M3_nut) + wall + ((2 * front_nut_pitch < 2 * nut_radius(M3_nut) + 3 * wall) ? wall : 0);
 front_nut_height = 2 * nut_radius(M3_nut) * cos(30) + wall + top_thickness - min_top_thickness;
 front_nut_depth = min(bearing_holder_width(X_bearings) - 2 * wall - nut_thickness(M3_nut, true) - 1, nut_trap_depth(M3_nut) + 6);
